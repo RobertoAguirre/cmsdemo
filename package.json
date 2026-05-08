@@ -12,7 +12,9 @@
     "dev:frontend": "npm run dev -w frontend",
     "dev:backend": "npm run dev -w backend",
     "build": "npm run build -w frontend",
-    "start": "npm run start -w backend"
+    "build:render": "npm run build -w frontend",
+    "start": "npm run start -w backend",
+    "start:render": "node backend/src/server.js"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

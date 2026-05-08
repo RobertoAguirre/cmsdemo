@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:4000/api";
+const API_URL = import.meta.env.VITE_API_URL ?? "/api";
 const TENANT_SLUG = import.meta.env.VITE_TENANT_SLUG ?? "demo-mx";
 const CMS_API_KEY = import.meta.env.VITE_CMS_API_KEY ?? "";
 

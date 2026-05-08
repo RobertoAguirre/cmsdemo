@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: cms-saas
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build:render
+    startCommand: npm run start:render
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGIN
+        value: https://tu-app.onrender.com
+      - key: VITE_API_URL
+        value: /api
+      - key: VITE_TENANT_SLUG
+        value: demo-mx
+      - key: SUPABASE_URL
+        value: https://tu-proyecto.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        value: sb_secret_cambia_esta_llave
+      - key: CMS_API_KEY
+        value: cambia-esta-api-key-minimo-16
+      - key: VITE_CMS_API_KEY
+        value: cambia-esta-api-key-minimo-16
