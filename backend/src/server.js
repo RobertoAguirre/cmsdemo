@@ -11,17 +11,18 @@ import { dashboardRouter } from "./modules/dashboard/dashboard.routes.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin || env.corsOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-      return callback(new Error("Origen no permitido por CORS"));
-    }
-  })
-);
 app.use(express.json({ limit: "1mb" }));
+
+const corsMiddleware = cors({
+  origin(origin, callback) {
+    if (!origin || env.corsOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Origen no permitido por CORS"));
+  }
+});
+
+app.use("/api", corsMiddleware);
 
 app.get("/health", (_req, res) => {
   res.json({ ok: true, region: "mx", now: new Date().toISOString() });

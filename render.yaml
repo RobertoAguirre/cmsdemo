@@ -13,7 +13,7 @@ services:
         value: production
       - key: PORT
         value: 10000
-      - key: CORS_ORIGIN
+      - key: CORS_ORIGINS
         value: https://tu-app.onrender.com
       - key: VITE_API_URL
         value: /api
